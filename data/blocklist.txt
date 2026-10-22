@@ -1,0 +1,5 @@
+# Demonstration list only. Add domains, one per line.
+# Subdomains are blocked automatically.
+doubleclick.net
+googlesyndication.com
+example-ad.invalid

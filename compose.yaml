@@ -1,0 +1,17 @@
+services:
+  netshield:
+    build: .
+    container_name: netshield
+    restart: unless-stopped
+    environment:
+      DNS_PORT: '53'
+      UPSTREAM_HOST: '1.1.1.1'
+      UPSTREAM_PORT: '53'
+      DB_PATH: '/app/data/queries.db'
+      BLOCKLIST_PATH: '/app/data/blocklist.txt'
+    ports:
+      - '0.0.0.0:5353:53/udp'
+      - '0.0.0.0:5353:53/tcp'
+      - '127.0.0.1:8080:8080/tcp'
+    volumes:
+      - ./data:/app/data
